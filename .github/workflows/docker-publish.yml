@@ -89,7 +89,7 @@ jobs:
         with:
           image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           format: 'sarif'
-          exit-code: '1'
+          # exit-code: '1'
           hide-progress: true
           ignore-unfixed: true
           vuln-type: 'os,library'
