@@ -76,7 +76,7 @@ jobs:
           cache-to: type=gha,mode=max
           platforms: linux/amd64,linux/arm64
           
-      - name: Attest
+      - name: Create and push Attestation
         uses: actions/attest-build-provenance@v1
         id: attest
         with:
@@ -90,7 +90,7 @@ jobs:
           image-ref: ${{ steps.meta.outputs.tags }}
           format: 'sarif'
           exit-code: '0'
-          ignore-unfixed: false
+          ignore-unfixed: true
           vuln-type: 'os,library'
           # severity: 'CRITICAL,HIGH'
           output: 'trivy-results.sarif'
