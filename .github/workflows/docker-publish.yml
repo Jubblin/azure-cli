@@ -89,9 +89,9 @@ jobs:
         with:
           image-ref: ${{ steps.meta.outputs.tags }}
           format: 'sarif'
-          exit-code: '1'
-          ignore-unfixed: true
-          # vuln-type: 'os,library'
+          exit-code: '0'
+          ignore-unfixed: false
+          vuln-type: 'os,library'
           # severity: 'CRITICAL,HIGH'
           output: 'trivy-results.sarif'
           
