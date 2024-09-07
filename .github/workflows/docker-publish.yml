@@ -44,7 +44,6 @@ jobs:
   
   checkov:
     runs-on: ubuntu-latest
-    needs: hadolint
     permissions:
       contents: read
       packages: write
@@ -76,7 +75,7 @@ jobs:
   
   build:
     runs-on: ubuntu-latest
-    needs: checkov
+    needs: [hadolint, checkov]
     permissions:
       contents: read
       packages: write
