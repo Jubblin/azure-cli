@@ -6,4 +6,5 @@ USER myuser
 RUN az extension add -n ssh && \
     az aks install-cli
 
-HEALTHCHECK az
+HEALTHCHECK --interval=30s --timeout=3s \
+  CMD az || exit 1
